@@ -108,29 +108,29 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#1e222a", /* 0: black */
-  "#e06c75", /* 1: red */
-  "#98c379", /* 2: green */
-  "#d19a66", /* 3: yellow */
-  "#61afef", /* 4: blue */
-  "#c678dd", /* 5: magenta */
-  "#56b6c2", /* 6: cyan */
-  "#abb2bf", /* 7: white */
-  "#5c6370", /* 8: brblack */
-  "#e06c75", /* 9: brred */
-  "#98c379", /* 10: brgreen */
-  "#d19a66", /* 11: bryellow */
-  "#61afef", /* 12: brblue */
-  "#c678dd", /* 13: brmagenta */
-  "#56b6c2", /* 14: brcyan */
-  "#ffffff", /* 15: brwhite */
+  "#1d1f21", /* 0: black */
+  "#cc6666", /* 1: red */
+  "#b5bd68", /* 2: green */
+  "#de935f", /* 3: orange */
+  "#81a2be", /* 4: blue */
+  "#b294bb", /* 5: purple */
+  "#8abeb7", /* 6: aqua */
+  "#373b41", /* 7: brgrey */
+  "#666666", /* 8: grey */
+  "#ff3334", /* 9: brred */
+  "#9ec400", /* 10: brgreen */
+  "#f0c674", /* 11: yellow */
+  "#81a2be", /* 12: brblue */
+  "#b777e0", /* 13: brpurple */
+  "#54ced6", /* 14: brcyan */
+  "#c5c8c6", /* 15: white */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
+unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 0;
@@ -204,20 +204,13 @@ static MouseShortcut mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
-	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
-	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_Page_Up,       zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Page_Down,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 };
 
 /*
