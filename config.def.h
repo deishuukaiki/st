@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Source Code Pro:pixelsize=14:antialias=true:autohint=true";
-static char *font2[] = { "Nerd Font Complete:pixelsize=12:antialias=true:autohint=true","devicons-regular" };
+static char *font = "SauceCodePro Nerd Font:pixelsize=14:antialias=true:autohint=true";
+static char *font2[] = { "Symbola:pixelsize=12:antialias=true:autohint=true","devicons-regular" };
 static int borderpx = 0;
 
 /*
